@@ -24,13 +24,16 @@ class Servlet < LiquidServlet
   end
 
   def products
+    products_by_client = products_list_by_clients
+    client_id = get_url_params['cliente_id'][0].to_s
+    
     { 
       'products' => products_list, 
       'more_products' => more_products_list, 
       'description' => description, 
       'section' => 'Snowboards', 
       'cool_products' => true,
-      'get_url_params' => get_url_params
+      'products_by_client' => products_by_client[client_id]
     }
   end
 
@@ -44,10 +47,49 @@ class Servlet < LiquidServlet
     return params
   end
 
+  def products_list_by_clients
+    {
+      "araujopa@gmail.com" => {
+        'name' => 'Fabrício Araújo',
+        'products' => [
+          { 
+            'name' => 'Arbor', 
+            'price' => 39900, 
+            'description' => 'the *arbor draft* is a excellent product' 
+          },
+          { 
+            'name' => 'Arbor Element', 
+            'price' => 40000, 
+            'description' => 'the *arbor element* rocks for freestyling' },
+          { 
+            'name' => 'Arbor Diamond', 
+            'price' => 59900, 
+            'description' => 'the *arbor diamond* is a made up product because im obsessed with arbor and have no creativity' 
+          }
+        ]
+      },
+      "bruna.moreira@petlove.com.br" => "Harrisburg",
+      "edonmenezes@gmail.com " => "Denver"
+    }
+  end
+
   def products_list
-    [{ 'name' => 'Arbor', 'price' => 39900, 'description' => 'the *arbor draft* is a excellent product' },
-     { 'name' => 'Arbor Element', 'price' => 40000, 'description' => 'the *arbor element* rocks for freestyling' },
-     { 'name' => 'Arbor Diamond', 'price' => 59900, 'description' => 'the *arbor diamond* is a made up product because im obsessed with arbor and have no creativity' }]
+    [
+      { 
+        'name' => 'Arbor', 
+        'price' => 39900, 
+        'description' => 'the *arbor draft* is a excellent product' 
+      },
+      { 
+        'name' => 'Arbor Element', 
+        'price' => 40000, 
+        'description' => 'the *arbor element* rocks for freestyling' },
+      { 
+        'name' => 'Arbor Diamond', 
+        'price' => 59900, 
+        'description' => 'the *arbor diamond* is a made up product because im obsessed with arbor and have no creativity' 
+      }
+    ]
   end
 
   def more_products_list
