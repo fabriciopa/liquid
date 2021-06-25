@@ -24,13 +24,28 @@ class Servlet < LiquidServlet
   end
 
   def products
-    { 'products' => products_list, 'more_products' => more_products_list, 'description' => description, 'section' => 'Snowboards', 'cool_products' => true }
+    { 
+      'products' => products_list, 
+      'more_products' => more_products_list, 
+      'description' => description, 
+      'section' => 'Snowboards', 
+      'cool_products' => true,
+      'get_url_params' => get_url_params
+    }
   end
 
   private
 
+  def get_url_params
+    url = @request.request_uri().to_s
+    uri = URI::parse(url)
+    id = uri.path.split('/')[4]
+    params = CGI::parse(uri.query)
+    return params
+  end
+
   def products_list
-    [{ 'name' => 'Arbor Draft', 'price' => 39900, 'description' => 'the *arbor draft* is a excellent product' },
+    [{ 'name' => 'Arbor', 'price' => 39900, 'description' => 'the *arbor draft* is a excellent product' },
      { 'name' => 'Arbor Element', 'price' => 40000, 'description' => 'the *arbor element* rocks for freestyling' },
      { 'name' => 'Arbor Diamond', 'price' => 59900, 'description' => 'the *arbor diamond* is a made up product because im obsessed with arbor and have no creativity' }]
   end
