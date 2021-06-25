@@ -1,47 +1,315 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-  <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta http-equiv="Content-Language" content="en-us" />
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+	</head>
+	<body style="margin: 0;">
+		{% assign products_by_client = products_by_client %}
+		{% assign news = news %}
 
-    <title>products</title>
-
-    <meta name="ROBOTS" content="ALL" />
-    <meta http-equiv="imagetoolbar" content="no" />
-    <meta name="MSSmartTagsPreventParsing" content="true" />
-    <meta name="Copyright" content="(c) 2005 Copyright content:  Copyright design: Tobias Luetke" />
-    <!-- (c) Copyright 2005 by Tobias Luetke All Rights Reserved. -->
-  </head>
-
-  <body>
-    {% assign all_products = products | concat: more_products  %}
-    <h1>{{ description | split: '~' | first }}</h1>
-
-    <h2>{{ description | split: '~' | last }}</h2>
-
-    <h2>There are currently {{all_products | count}} products in the {{section}} catalog</h2>
-
-    {% assign products_by_client = products_by_client %}
-
-    {{ products_by_client }}
-
-    <ul id="products">
-
-      {% for product in all_products %}
-        <li>
-          <h2>{{product.name}}</h2>
-          Only {{product.price | price }}
-
-          {{product.description | prettyprint | paragraph }}
-
-          {{ 'it rocks!' | paragraph }}
-
-        </li>
-      {% endfor %}
-
-    </ul>
-
-  </body>
+		<div style="display: block !important; min-width: 100% !important; width: 100% !important; margin: 0; padding: 0;"
+			bgcolor="#f4f4f7"
+		>
+			<table
+				width="100%"
+				border="0"
+				cellspacing="0"
+				cellpadding="0"
+				bgcolor="#f4f4f7"
+			>
+				<tbody>
+					<tr>
+						<td style="font-size: 0pt; line-height: 0pt; font-weight: normal; margin: 0; padding: 15px 0px;">
+							<table
+								width="600"
+								border="0"
+								cellspacing="0"
+								cellpadding="0"
+								bgcolor="#ffffff"
+								align="center"
+							>
+								<tbody>
+									<tr>
+										<td>
+											<a
+												href="https://clicks.petlove.com.br/f/a/glezD5bTHU-HZWKZP0zVpw~~/AAQRxQA~/RgRisbNvP0SIaHR0cHM6Ly93d3cucGV0bG92ZS5jb20uYnIvP3V0bV9zb3VyY2U9YnomdXRtX21lZGl1bT1lbWFpbF9wbCZ1dG1fY2FtcGFpZ249MTAwMF9QUk9NT19FWENMVVNJVk9fRE9NXzEyODc3OTQ5MTNfMjAyMTA2MjAmdXRtX2NvbnRlbnQ9bG9nb1cDc3BjQgpgym8uz2A7VtNWUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~"
+												style="color: #45abd9; text-decoration: none;"
+												target="_blank"
+												data-saferedirecturl="https://www.google.com/url?q=https://clicks.petlove.com.br/f/a/glezD5bTHU-HZWKZP0zVpw~~/AAQRxQA~/RgRisbNvP0SIaHR0cHM6Ly93d3cucGV0bG92ZS5jb20uYnIvP3V0bV9zb3VyY2U9YnomdXRtX21lZGl1bT1lbWFpbF9wbCZ1dG1fY2FtcGFpZ249MTAwMF9QUk9NT19FWENMVVNJVk9fRE9NXzEyODc3OTQ5MTNfMjAyMTA2MjAmdXRtX2NvbnRlbnQ9bG9nb1cDc3BjQgpgym8uz2A7VtNWUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~&amp;source=gmail&amp;ust=1624713390505000&amp;usg=AFQjCNG-KFNYKiBVN5com9ctk28kO87mNg"
+											>
+												<img
+													src="https://ci5.googleusercontent.com/proxy/R1KLQpmIe_zErcGtJM8WsPt-ndNZsh7Pt3beSKE2zpsBkeI5EcLmHBqR8attqZDRdmhX-ovnT6NQr8CqcIqz3oUwBmX_eQLSlAqfl7J7xwuUMnUWuqh36opBvSCt1taWmg=s0-d-e1-ft#https://www.petlove.com.br/static/uploads/banner_image/image/21622/Slice_1.png"
+													border="0"
+													width="600"
+													height="121"
+													alt="Logo"
+													class="CToWUd"
+												/>
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td style="color: #ffffff; font-family: 'Noto Sans', Arial, sans-serif; font-size: 24px; line-height: 24px; font-weight: bold; padding: 12px; padding: 20px 30px;" align="center" bgcolor="#541E82">
+											<span style="color: #ffffff; text-decoration: none;">
+												Olá,
+												Fabrício Araújo!
+												Tudo
+												bem?
+											</span>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="https://clicks.petlove.com.br/f/a/0QQoGcND449EYU_Yt3xUIg~~/AAQRxQA~/RgRisbNvP0SpaHR0cHM6Ly93d3cucGV0bG92ZS5jb20uYnIvY29sZWNhby9jb25oZWNhLWRlbnRhc3RpeD91dG1fc291cmNlPWJ6JnV0bV9tZWRpdW09ZW1haWxfcGwmdXRtX2NhbXBhaWduPTEwMDBfUFJPTU9fRVhDTFVTSVZPX0RPTV8xMjg3Nzk0OTEzXzIwMjEwNjIwJnV0bV9jb250ZW50PVBSMTI4Nzc5NDkxM1cDc3BjQgpgym8uz2A7VtNWUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~" style="color: #45abd9; text-decoration: none;" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://clicks.petlove.com.br/f/a/0QQoGcND449EYU_Yt3xUIg~~/AAQRxQA~/RgRisbNvP0SpaHR0cHM6Ly93d3cucGV0bG92ZS5jb20uYnIvY29sZWNhby9jb25oZWNhLWRlbnRhc3RpeD91dG1fc291cmNlPWJ6JnV0bV9tZWRpdW09ZW1haWxfcGwmdXRtX2NhbXBhaWduPTEwMDBfUFJPTU9fRVhDTFVTSVZPX0RPTV8xMjg3Nzk0OTEzXzIwMjEwNjIwJnV0bV9jb250ZW50PVBSMTI4Nzc5NDkxM1cDc3BjQgpgym8uz2A7VtNWUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~&amp;source=gmail&amp;ust=1624713390505000&amp;usg=AFQjCNGKYgTDl8roIMTjZhF7r0TJ-Gpx1w">
+												<img src="https://ci4.googleusercontent.com/proxy/OVarZ7mHb9GwCZtkggQDymD149gPKVdH5CAXHDEPpkggCQNJNNQ-6C1fFMm_PueCoEZHp0ErVwNraMJiiKGa8IcOdASrgF_PuStYi1kYP_v16Nx8I0rM_JEv6KdROZDZvs0=s0-d-e1-ft#https://www.petlove.com.br/static/uploads/banner_image/image/23233/Slice_83.png" border="0" width="600" height="259" alt="Dentastix - conteúdo" class="CToWUd">
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<a href="https://clicks.petlove.com.br/f/a/0QQoGcND449EYU_Yt3xUIg~~/AAQRxQA~/RgRisbNvP0SpaHR0cHM6Ly93d3cucGV0bG92ZS5jb20uYnIvY29sZWNhby9jb25oZWNhLWRlbnRhc3RpeD91dG1fc291cmNlPWJ6JnV0bV9tZWRpdW09ZW1haWxfcGwmdXRtX2NhbXBhaWduPTEwMDBfUFJPTU9fRVhDTFVTSVZPX0RPTV8xMjg3Nzk0OTEzXzIwMjEwNjIwJnV0bV9jb250ZW50PVBSMTI4Nzc5NDkxM1cDc3BjQgpgym8uz2A7VtNWUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~" style="color: #45abd9; text-decoration: none;" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://clicks.petlove.com.br/f/a/0QQoGcND449EYU_Yt3xUIg~~/AAQRxQA~/RgRisbNvP0SpaHR0cHM6Ly93d3cucGV0bG92ZS5jb20uYnIvY29sZWNhby9jb25oZWNhLWRlbnRhc3RpeD91dG1fc291cmNlPWJ6JnV0bV9tZWRpdW09ZW1haWxfcGwmdXRtX2NhbXBhaWduPTEwMDBfUFJPTU9fRVhDTFVTSVZPX0RPTV8xMjg3Nzk0OTEzXzIwMjEwNjIwJnV0bV9jb250ZW50PVBSMTI4Nzc5NDkxM1cDc3BjQgpgym8uz2A7VtNWUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~&amp;source=gmail&amp;ust=1624713390505000&amp;usg=AFQjCNGKYgTDl8roIMTjZhF7r0TJ-Gpx1w">
+												<img src="https://ci4.googleusercontent.com/proxy/cqcdIUSQJ_slW_gbhcgriNW37nqZcpkQJxRuSb97dAMS2DpwkyNTYhM-oaMXOdMKfMG8FbC_Ar5aMwiYE4mImwO0qnYdxBdJvfEvJ_o2hbXGrAa6yWq_B0F7iM5_WXzNRAw=s0-d-e1-ft#https://www.petlove.com.br/static/uploads/banner_image/image/23234/Slice_84.png" border="0" width="600" height="587" alt="Dentastix - conteúdo" class="CToWUd">
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td style="color: #ffffff; font-family: 'Noto Sans', Arial, sans-serif; font-size: 18px; line-height: 24px; font-weight: bold; padding: 12px; padding: 20px 30px;" align="center" bgcolor="#541E82">
+											<span style="color: #ffffff; text-decoration: none;">
+												Veja nossas ofertas!
+											</span>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<table>
+												<tr>
+													{% for product in products_by_client['products'] limit: 2 %}
+														<td style="color: #4c4c4c; font-family: 'Noto Sans', Arial, sans-serif; font-size: 16px; line-height: 16px; padding: 12px; padding: 20px 30px;" align="center" bgcolor="#ffffff">
+															<p>
+																<a href="{{product.link}}" target="_blank" style="text-decoration: none">
+																	<img src="{{product['image']]}}" width="100%">
+																</a>
+															</p>
+															<p>
+																<a href="{{product.link}}" target="_blank" style="text-decoration: none; color: #4c4c4c;">
+																	{{product.name }}
+																</a>
+															</p>
+															<p style="color: #F24783; font-size: 22px; font-weight: bold;">
+																{{product.price | price }}
+															</p>
+														</td>
+													{% endfor %}
+												</tr>
+												<tr>
+													{% for product in products_by_client['products'] offset: 2 %}
+														<td style="color: #4c4c4c; font-family: 'Noto Sans', Arial, sans-serif; font-size: 16px; line-height: 16px; padding: 12px; padding: 20px 30px;" align="center" bgcolor="#ffffff">
+															<p>
+																<a href="{{product.link}}" target="_blank" style="text-decoration: none">
+																	<img src="{{product['image']]}}" width="100%">
+																</a>
+															</p>
+															<p>
+																<a href="{{product.link}}" target="_blank" style="text-decoration: none; color: #4c4c4c;">
+																	{{product.name }}
+																</a>
+															</p>
+															<p style="color: #F24783; font-size: 22px; font-weight: bold;">
+																{{product.price | price }}
+															</p>
+														</td>
+													{% endfor %}
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<table align="center">
+												<tr>
+													<td>
+														<a href="https://clicks.petlove.com.br/f/a/_IQMAY3KhF-QVQvKhUOG7Q~~/AAQRxQA~/RgRisbNvP0SbaHR0cHM6Ly93d3cucGV0bG92ZS5jb20uYnIvY2FjaG9ycm8vcmFjb2VzP3V0bV9zb3VyY2U9YnomdXRtX21lZGl1bT1lbWFpbF9wbCZ1dG1fY2FtcGFpZ249MTAwMF9QUk9NT19FWENMVVNJVk9fRE9NXzEyODc3OTQ5MTNfMjAyMTA2MjAmdXRtX2NvbnRlbnQ9Q09SQUNPRVNXA3NwY0IKYMpvLs9gO1bTVlIbZWRvbi5tZW5lemVzQHBldGxvdmUuY29tLmJyWAQAAABj" style="color: #45abd9; text-decoration: none;" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://clicks.petlove.com.br/f/a/_IQMAY3KhF-QVQvKhUOG7Q~~/AAQRxQA~/RgRisbNvP0SbaHR0cHM6Ly93d3cucGV0bG92ZS5jb20uYnIvY2FjaG9ycm8vcmFjb2VzP3V0bV9zb3VyY2U9YnomdXRtX21lZGl1bT1lbWFpbF9wbCZ1dG1fY2FtcGFpZ249MTAwMF9QUk9NT19FWENMVVNJVk9fRE9NXzEyODc3OTQ5MTNfMjAyMTA2MjAmdXRtX2NvbnRlbnQ9Q09SQUNPRVNXA3NwY0IKYMpvLs9gO1bTVlIbZWRvbi5tZW5lemVzQHBldGxvdmUuY29tLmJyWAQAAABj&amp;source=gmail&amp;ust=1624713390505000&amp;usg=AFQjCNE77gMyzWw4f6ZQ4HbRYohZHvzuug">
+															<img src="https://ci6.googleusercontent.com/proxy/753B1GOghLaL7YB5Gqgqpl-8gSWoJmoGaobMH6lSvXkIu08Th5scTBxrD_k5gFPaYRPoJdlib7ZCeCSpH4fEBSeWwy6Ee1w_mQCo0I7KZpNw0Z5E4LeKMZGugSyy3814Tg=s0-d-e1-ft#https://www.petlove.com.br/static/uploads/banner_image/image/21629/Slice_8.png" border="0" width="103" height="64" alt="Rações" class="
+																	CToWUd
+																">
+														</a>
+													</td>
+													<td>
+														<a href="https://clicks.petlove.com.br/f/a/TKQNmIHwhcKcWUdUA_JshQ~~/AAQRxQA~/RgRisbNvP0SraHR0cHM6Ly93d3cucGV0bG92ZS5jb20uYnIvY2FjaG9ycm8vbWVkaWNpbmEtZS1zYXVkZT91dG1fc291cmNlPWJ6JnV0bV9tZWRpdW09ZW1haWxfcGwmdXRtX2NhbXBhaWduPTEwMDBfUFJPTU9fRVhDTFVTSVZPX0RPTV8xMjg3Nzk0OTEzXzIwMjEwNjIwJnV0bV9jb250ZW50PUNPTUVESUNBTUVOVE9TVwNzcGNCCmDKby7PYDtW01ZSG2Vkb24ubWVuZXplc0BwZXRsb3ZlLmNvbS5iclgEAAAAYw~~" style="color: #45abd9; text-decoration: none;" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://clicks.petlove.com.br/f/a/TKQNmIHwhcKcWUdUA_JshQ~~/AAQRxQA~/RgRisbNvP0SraHR0cHM6Ly93d3cucGV0bG92ZS5jb20uYnIvY2FjaG9ycm8vbWVkaWNpbmEtZS1zYXVkZT91dG1fc291cmNlPWJ6JnV0bV9tZWRpdW09ZW1haWxfcGwmdXRtX2NhbXBhaWduPTEwMDBfUFJPTU9fRVhDTFVTSVZPX0RPTV8xMjg3Nzk0OTEzXzIwMjEwNjIwJnV0bV9jb250ZW50PUNPTUVESUNBTUVOVE9TVwNzcGNCCmDKby7PYDtW01ZSG2Vkb24ubWVuZXplc0BwZXRsb3ZlLmNvbS5iclgEAAAAYw~~&amp;source=gmail&amp;ust=1624713390505000&amp;usg=AFQjCNE0IukcFXQdiLeFUOwxNm9b5iSbkg">
+															<img src="https://ci3.googleusercontent.com/proxy/Of4w3QFkpn0tIyE435trL2QQv5YO0OQpZNbwVbvQIoqw5Id6EHsb3h_s5baWDYLVHkvgjkCTGnxOiKcCrgfaoXLkLrAP5_9zUwZBvZ0hN7x4lYcAr5448C_9Hj_vRMLE9w=s0-d-e1-ft#https://www.petlove.com.br/static/uploads/banner_image/image/21630/Slice_9.png" border="0" width="104" height="64" alt="Medicamentos" class="
+																	CToWUd
+																">
+														</a>
+													</td>
+													<td>
+														<a href="https://clicks.petlove.com.br/f/a/su-0BRBOgyyYPhv-Evc93g~~/AAQRxQA~/RgRisbNvP0SnaHR0cHM6Ly93d3cucGV0bG92ZS5jb20uYnIvY2FjaG9ycm8vaGlnaWVuZS1lLWxpbXBlemE_dXRtX3NvdXJjZT1ieiZ1dG1fbWVkaXVtPWVtYWlsX3BsJnV0bV9jYW1wYWlnbj0xMDAwX1BST01PX0VYQ0xVU0lWT19ET01fMTI4Nzc5NDkxM18yMDIxMDYyMCZ1dG1fY29udGVudD1DT0hJR0lFTkVXA3NwY0IKYMpvLs9gO1bTVlIbZWRvbi5tZW5lemVzQHBldGxvdmUuY29tLmJyWAQAAABj" style="color: #45abd9; text-decoration: none;" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://clicks.petlove.com.br/f/a/su-0BRBOgyyYPhv-Evc93g~~/AAQRxQA~/RgRisbNvP0SnaHR0cHM6Ly93d3cucGV0bG92ZS5jb20uYnIvY2FjaG9ycm8vaGlnaWVuZS1lLWxpbXBlemE_dXRtX3NvdXJjZT1ieiZ1dG1fbWVkaXVtPWVtYWlsX3BsJnV0bV9jYW1wYWlnbj0xMDAwX1BST01PX0VYQ0xVU0lWT19ET01fMTI4Nzc5NDkxM18yMDIxMDYyMCZ1dG1fY29udGVudD1DT0hJR0lFTkVXA3NwY0IKYMpvLs9gO1bTVlIbZWRvbi5tZW5lemVzQHBldGxvdmUuY29tLmJyWAQAAABj&amp;source=gmail&amp;ust=1624713390506000&amp;usg=AFQjCNFwg00Ay-GiCXLwj3FnOB2RHiUVSw">
+															<img src="https://ci4.googleusercontent.com/proxy/Ml1LtOtb457QR6o4LIY1S8F1IpNH_jfIcXYe9-w25RRHMFSkI6W27PMr5fyQ3KOq2eVOvm2-usL8wsAtuvB7O2x0PaJq9VYvrQmP2bj-zRcu77V3o5DkBtrWvS8LBXn9o6A=s0-d-e1-ft#https://www.petlove.com.br/static/uploads/banner_image/image/21631/Slice_10.png" border="0" width="102" height="64" alt="Higiene" class="
+																	CToWUd
+																">
+														</a>
+													</td>
+													<td>
+														<a href="https://clicks.petlove.com.br/f/a/af-QeEgmcdAwPF4pdegeYg~~/AAQRxQA~/RgRisbNvP0S0aHR0cHM6Ly93d3cucGV0bG92ZS5jb20uYnIvY2FjaG9ycm8vYWNlc3Nvcmlvcy1wYXJhLWFsaW1lbnRhY2FvP3V0bV9zb3VyY2U9YnomdXRtX21lZGl1bT1lbWFpbF9wbCZ1dG1fY2FtcGFpZ249MTAwMF9QUk9NT19FWENMVVNJVk9fRE9NXzEyODc3OTQ5MTNfMjAyMTA2MjAmdXRtX2NvbnRlbnQ9Q09BQ0VTU09SSU9TVwNzcGNCCmDKby7PYDtW01ZSG2Vkb24ubWVuZXplc0BwZXRsb3ZlLmNvbS5iclgEAAAAYw~~" style="color: #45abd9; text-decoration: none;" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://clicks.petlove.com.br/f/a/af-QeEgmcdAwPF4pdegeYg~~/AAQRxQA~/RgRisbNvP0S0aHR0cHM6Ly93d3cucGV0bG92ZS5jb20uYnIvY2FjaG9ycm8vYWNlc3Nvcmlvcy1wYXJhLWFsaW1lbnRhY2FvP3V0bV9zb3VyY2U9YnomdXRtX21lZGl1bT1lbWFpbF9wbCZ1dG1fY2FtcGFpZ249MTAwMF9QUk9NT19FWENMVVNJVk9fRE9NXzEyODc3OTQ5MTNfMjAyMTA2MjAmdXRtX2NvbnRlbnQ9Q09BQ0VTU09SSU9TVwNzcGNCCmDKby7PYDtW01ZSG2Vkb24ubWVuZXplc0BwZXRsb3ZlLmNvbS5iclgEAAAAYw~~&amp;source=gmail&amp;ust=1624713390506000&amp;usg=AFQjCNEs9j_SHVhwl2P8Xgm-b7vZHk6i4g">
+															<img src="https://ci3.googleusercontent.com/proxy/9Nm9CumEx7MVM97iB4WWSQvj_3o_wfV5-VQHfg1m617JPAU1yOsDC1PXQ_sl4O6X0kdtCIYZznsT1fhTVI2mfgtAvfQACBcZE8RYYbvO09Osu6u7-h5Sz5eaHnj1lBuxEes=s0-d-e1-ft#https://www.petlove.com.br/static/uploads/banner_image/image/21632/Slice_11.png" border="0" width="104" height="64" alt="Acessórios" class="
+																	CToWUd
+																">
+														</a>
+													</td>
+													<td>
+														<a href="https://clicks.petlove.com.br/f/a/O-AV6Yl90hup_weJIqMaJw~~/AAQRxQA~/RgRisbNvP0SjaHR0cHM6Ly93d3cucGV0bG92ZS5jb20uYnIvY2FjaG9ycm8vYnJpbnF1ZWRvcz91dG1fc291cmNlPWJ6JnV0bV9tZWRpdW09ZW1haWxfcGwmdXRtX2NhbXBhaWduPTEwMDBfUFJPTU9fRVhDTFVTSVZPX0RPTV8xMjg3Nzk0OTEzXzIwMjEwNjIwJnV0bV9jb250ZW50PUNPQlJJTlFVRURPU1cDc3BjQgpgym8uz2A7VtNWUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~" style="color: #45abd9; text-decoration: none;" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://clicks.petlove.com.br/f/a/O-AV6Yl90hup_weJIqMaJw~~/AAQRxQA~/RgRisbNvP0SjaHR0cHM6Ly93d3cucGV0bG92ZS5jb20uYnIvY2FjaG9ycm8vYnJpbnF1ZWRvcz91dG1fc291cmNlPWJ6JnV0bV9tZWRpdW09ZW1haWxfcGwmdXRtX2NhbXBhaWduPTEwMDBfUFJPTU9fRVhDTFVTSVZPX0RPTV8xMjg3Nzk0OTEzXzIwMjEwNjIwJnV0bV9jb250ZW50PUNPQlJJTlFVRURPU1cDc3BjQgpgym8uz2A7VtNWUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~&amp;source=gmail&amp;ust=1624713390506000&amp;usg=AFQjCNEoOqicBeX6xGQr3Nkmi_LtjdfHqA">
+															<img src="https://ci4.googleusercontent.com/proxy/8l7avdkgT6Gibar1Q0pgIyt3rlzVxnUZWciAdtrcEsuMHb4VWfVvVKssmcrLh5jy9XX5Vf3UKPEgr_MLlvBv7vQdHMegO09XV6Pb6zP2AB9oLdx-VKNAfZMP3H3ca5yknkc=s0-d-e1-ft#https://www.petlove.com.br/static/uploads/banner_image/image/21633/Slice_12.png" border="0" width="103" height="64" alt="Brinquedos" class="
+																	CToWUd
+																">
+														</a>
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td style="color: #ffffff; font-family: 'Noto Sans', Arial, sans-serif; font-size: 14px; line-height: 24px; font-weight: bold; padding: 12px;" align="center" bgcolor="#541E82">
+											<a href="https://clicks.petlove.com.br/f/a/Ul7Hq0KQkM5Oycnp93ySFQ~~/AAQRxQA~/RgRisbNvP0S1aHR0cHM6Ly9kb2dzdXJ2ZXkudHlwZWZvcm0uY29tL3RvL0tTMGZvUEVUI3VzZXJfaWQ9eHh4eHg_dXRtX3NvdXJjZT1ieiZ1dG1fbWVkaXVtPWVtYWlsX3BsJnV0bV9jYW1wYWlnbj0xMDAwX1BST01PX0VYQ0xVU0lWT19ET01fMTI4Nzc5NDkxM18yMDIxMDYyMCZ1dG1fY29udGVudD1mYWl4YV9wZXJzb25hbGl6YXZlbFcDc3BjQgpgym8uz2A7VtNWUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~" style="color: #ffffff; text-decoration: none;" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://clicks.petlove.com.br/f/a/Ul7Hq0KQkM5Oycnp93ySFQ~~/AAQRxQA~/RgRisbNvP0S1aHR0cHM6Ly9kb2dzdXJ2ZXkudHlwZWZvcm0uY29tL3RvL0tTMGZvUEVUI3VzZXJfaWQ9eHh4eHg_dXRtX3NvdXJjZT1ieiZ1dG1fbWVkaXVtPWVtYWlsX3BsJnV0bV9jYW1wYWlnbj0xMDAwX1BST01PX0VYQ0xVU0lWT19ET01fMTI4Nzc5NDkxM18yMDIxMDYyMCZ1dG1fY29udGVudD1mYWl4YV9wZXJzb25hbGl6YXZlbFcDc3BjQgpgym8uz2A7VtNWUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~&amp;source=gmail&amp;ust=1624713390506000&amp;usg=AFQjCNHCfZkVtC4477VfeZblKjpvXoxZFg">
+												<span style="color: #ffffff; text-decoration: none;">
+													Ganhe R$30
+													OFF em
+													hospedagem
+													DogHero
+													<br>
+													respondendo
+													nossa
+													pesquisa
+													<u>aqui</u>
+												</span>
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td style="color: #541E82; font-family: 'Noto Sans', Arial, sans-serif; font-size: 24px; line-height: 24px; font-weight: bold; padding: 30px;" align="center">
+											DICAS PETLOVE
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<table>
+												<tr>
+													{% for new in news %}
+														<td style="color: #4c4c4c; font-family: 'Noto Sans', Arial, sans-serif; font-size: 16px; line-height: 16px; padding: 12px; padding: 20px 30px;" align="center" bgcolor="#ffffff">
+															<p>
+																<a href="{{new.link}}" target="_blank" style="text-decoration: none">
+																	<img src="{{new['image']]}}" width="100%">
+																</a>
+															</p>
+															<p>
+																<a href="{{new.link}}" target="_blank" style="text-decoration: none; color: #4c4c4c;">
+																	{{new.name }}
+																</a>
+															</p>
+														</td>
+													{% endfor %}
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td align="center">
+											<a href="https://clicks.petlove.com.br/f/a/1pSG1Xk_Rfepz9qVAPIsFA~~/AAQRxQA~/RgRisbNvP0R9aHR0cHM6Ly93d3cucGV0bG92ZS5jb20uYnIvcGV0bG92ZS1qYT91dG1fc291cmNlPWJ6JnV0bV9tZWRpdW09ZW1haWxfcGwmdXRtX2NvbnRlbnQ9Rk9PVEVSX1BFVExPVkVKQV9NRyZ1dG1fY2FtcGFpZ249MjAyMTA2MjBXA3NwY0IKYMpvLs9gO1bTVlIbZWRvbi5tZW5lemVzQHBldGxvdmUuY29tLmJyWAQAAABj" style="text-decoration: none; color: #45abd9;" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://clicks.petlove.com.br/f/a/1pSG1Xk_Rfepz9qVAPIsFA~~/AAQRxQA~/RgRisbNvP0R9aHR0cHM6Ly93d3cucGV0bG92ZS5jb20uYnIvcGV0bG92ZS1qYT91dG1fc291cmNlPWJ6JnV0bV9tZWRpdW09ZW1haWxfcGwmdXRtX2NvbnRlbnQ9Rk9PVEVSX1BFVExPVkVKQV9NRyZ1dG1fY2FtcGFpZ249MjAyMTA2MjBXA3NwY0IKYMpvLs9gO1bTVlIbZWRvbi5tZW5lemVzQHBldGxvdmUuY29tLmJyWAQAAABj&amp;source=gmail&amp;ust=1624713390506000&amp;usg=AFQjCNEb0-HWJ811xaTW5NXLXmSzPon8fg">
+												<img src="https://ci6.googleusercontent.com/proxy/_2s9yQyjhFsDTPtc0juWvASAYHLk5byuC4DKbmuS-8kmanagKRYsQv0WSJMTrAh-I22cMy1FcV2Twk1TM34aWHlISx5FMClyU5pqseeRSf29MGb7Nb8aH1hu9OoqzLthbDOuIvA2BXIHLSqBf_qcZdPI6dTu1aUSbiIuBmw=s0-d-e1-ft#https://www.petlove.com.br/static/uploads/banner_image/image/22723/footers-email_1805_petlove-ja_SP_v2.png" width="600" alt=" É de SP? Receba suas compras em até 4h!" style="line-height: 0px; width: 100%; height: auto; display: block; border: 0;" class="CToWUd">
+											</a>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<table style="width: 100%;">
+												<tr>
+													<td style="width: 25%;">
+	
+													</td>
+													<td style="width: 50%;">
+														<table style="width: 100%;" align="center">
+															<tr>
+																<td>
+																	<a href="https://clicks.petlove.com.br/f/a/DH-lhfGY6bfuKY-noAf68w~~/AAQRxQA~/RgRisbNvP0QoaHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9wZXRsb3ZlYnJhc2lsL1cDc3BjQgpgym8uz2A7VtNWUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~" style="color: #45abd9; text-decoration: none;" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://clicks.petlove.com.br/f/a/DH-lhfGY6bfuKY-noAf68w~~/AAQRxQA~/RgRisbNvP0QoaHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9wZXRsb3ZlYnJhc2lsL1cDc3BjQgpgym8uz2A7VtNWUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~&amp;source=gmail&amp;ust=1624713390506000&amp;usg=AFQjCNHBIpIQXy6eXus5BaJrp3l3MXP3gA">
+																		<img src="https://ci5.googleusercontent.com/proxy/Osc6oiZVNcZAw2p0DBplen6RKU0ti4H-RO_HrQR2RPq6axNhODBivQx0obtfeRE4pPCfLfpgzmUDzSF6SQ6QtFOE2YiWFQ__hJ5B80iKiyD-NnyV9bSocCYe07D0mlHMv0Y=s0-d-e1-ft#https://www.petlove.com.br/static/uploads/banner_image/image/21663/Slice_25.png" border="0" width="43" height="97" alt="Instagram" class="
+																				CToWUd
+																			">
+																	</a>
+																</td>
+																<td>
+																	<a href="https://clicks.petlove.com.br/f/a/vidCQFdP_N-SNwwkIrSvRQ~~/AAQRxQA~/RgRisbNvP0QjaHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL1BldGxvdmVCUi9XA3NwY0IKYMpvLs9gO1bTVlIbZWRvbi5tZW5lemVzQHBldGxvdmUuY29tLmJyWAQAAABj" style="color: #45abd9; text-decoration: none;" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://clicks.petlove.com.br/f/a/vidCQFdP_N-SNwwkIrSvRQ~~/AAQRxQA~/RgRisbNvP0QjaHR0cHM6Ly93d3cuZmFjZWJvb2suY29tL1BldGxvdmVCUi9XA3NwY0IKYMpvLs9gO1bTVlIbZWRvbi5tZW5lemVzQHBldGxvdmUuY29tLmJyWAQAAABj&amp;source=gmail&amp;ust=1624713390507000&amp;usg=AFQjCNFvMu1ZYW3vaGL797vezJW3w84oPA">
+																		<img src="https://ci6.googleusercontent.com/proxy/9oZ-Fz8PmNcOYBwD-zyLD7RhQYUzZ01qz5RDSTm2dOO219_1W0bCgnUOXJBHSyDJBLKfmnUyNErWT_4O380n8zDiPb5SdSgcIE68-Dfj3-6kBmt1SyjxL-MuscOJItxW7Uw=s0-d-e1-ft#https://www.petlove.com.br/static/uploads/banner_image/image/21662/Slice_24.png" border="0" width="42" height="97" alt="Facebook" class="
+																				CToWUd
+																			">
+																	</a>
+																</td>
+																<td>
+																	<a href="https://clicks.petlove.com.br/f/a/G6jqm8S8amv_xR6rh-QHRA~~/AAQRxQA~/RgRisbNvP0QlaHR0cHM6Ly93d3cudGlrdG9rLmNvbS9AcGV0bG92ZWJyYXNpbFcDc3BjQgpgym8uz2A7VtNWUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~" style="color: #45abd9; text-decoration: none;" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://clicks.petlove.com.br/f/a/G6jqm8S8amv_xR6rh-QHRA~~/AAQRxQA~/RgRisbNvP0QlaHR0cHM6Ly93d3cudGlrdG9rLmNvbS9AcGV0bG92ZWJyYXNpbFcDc3BjQgpgym8uz2A7VtNWUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~&amp;source=gmail&amp;ust=1624713390507000&amp;usg=AFQjCNF9r8qoriHeoHfIrxVL_PnpHteaeg">
+																		<img src="https://ci3.googleusercontent.com/proxy/9U_fMUdQ-9PeMLC0jf4OWayViDtuqhC8INdNGQuZJourLkVUUFbfnIhj3QQXoWe0NSLvVBTClMX_ppLBvsaBLK4SudF_EddBO4wHo-GMPtbhj5lYUbC94bKNhMBCScARkrQ=s0-d-e1-ft#https://www.petlove.com.br/static/uploads/banner_image/image/21658/Slice_20.png" border="0" width="42" height="97" alt="Tiktok" class="
+																				CToWUd
+																			">
+																	</a>
+																</td>
+																<td>
+																	<a href="https://clicks.petlove.com.br/f/a/xJ1j3E2T5fFoFT31FP1zvw~~/AAQRxQA~/RgRisbNvP0Q4aHR0cHM6Ly93d3cueW91dHViZS5jb20vY2hhbm5lbC9VQzdFdXAtQW9XZjFBZXdqdlY4SkYwOWdXA3NwY0IKYMpvLs9gO1bTVlIbZWRvbi5tZW5lemVzQHBldGxvdmUuY29tLmJyWAQAAABj" style="color: #45abd9; text-decoration: none;" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://clicks.petlove.com.br/f/a/xJ1j3E2T5fFoFT31FP1zvw~~/AAQRxQA~/RgRisbNvP0Q4aHR0cHM6Ly93d3cueW91dHViZS5jb20vY2hhbm5lbC9VQzdFdXAtQW9XZjFBZXdqdlY4SkYwOWdXA3NwY0IKYMpvLs9gO1bTVlIbZWRvbi5tZW5lemVzQHBldGxvdmUuY29tLmJyWAQAAABj&amp;source=gmail&amp;ust=1624713390507000&amp;usg=AFQjCNE0CS892TveP8NVAJh_PX_5tOfSIw">
+																		<img src="https://ci5.googleusercontent.com/proxy/Hz5SdmMpY028PdleR-IG5dbnRenZcmF5WsHFa4lQEKIz8VOPyJQWUCxYmDx0Hj1HwntrpYbgzsbRlnSKrah7DoqSz-anZ8OXi1gRE9CtH7Mt3b2vnbjkonKHBh4f7ATMkxY=s0-d-e1-ft#https://www.petlove.com.br/static/uploads/banner_image/image/21659/Slice_21.png" border="0" width="44" height="97" alt="Youtube" class="
+																				CToWUd
+																			">
+																	</a>
+																</td>
+																<td>
+																	<a href="https://clicks.petlove.com.br/f/a/6G3KNtcH_jt8mVqUjfTAtA~~/AAQRxQA~/RgRisbNvP0QraHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2NvbXBhbnkvcGV0bG92ZWJyL1cDc3BjQgpgym8uz2A7VtNWUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~" style="color: #45abd9; text-decoration: none;" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://clicks.petlove.com.br/f/a/6G3KNtcH_jt8mVqUjfTAtA~~/AAQRxQA~/RgRisbNvP0QraHR0cHM6Ly93d3cubGlua2VkaW4uY29tL2NvbXBhbnkvcGV0bG92ZWJyL1cDc3BjQgpgym8uz2A7VtNWUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~&amp;source=gmail&amp;ust=1624713390507000&amp;usg=AFQjCNF_LeJ5Zm80SwDMog-5Xt7quDkj9Q">
+																		<img src="https://ci3.googleusercontent.com/proxy/Ch9N5ECAFMCWIQlOr-pwFJ79I9VTwPmj8oBp7_bpipnZdL9oHBHAb3VLoEUB-HlwtryZNPIX0GENk2INfABmTI_nrQcXb8x_FH52hmvk9Sax_KnsbV3IbDfs2a52wbI8HTc=s0-d-e1-ft#https://www.petlove.com.br/static/uploads/banner_image/image/21660/Slice_22.png" border="0" width="43" height="97" alt="Linkedin" class="
+																				CToWUd
+																			">
+																	</a>
+																</td>
+																<td>
+																	<a href="https://clicks.petlove.com.br/f/a/N6kuPZOW949Pj-pA1bM_dA~~/AAQRxQA~/RgRisbNvP0QdaHR0cHM6Ly90d2l0dGVyLmNvbS9wZXRsb3ZlYnJXA3NwY0IKYMpvLs9gO1bTVlIbZWRvbi5tZW5lemVzQHBldGxvdmUuY29tLmJyWAQAAABj" style="color: #45abd9; text-decoration: none;" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://clicks.petlove.com.br/f/a/N6kuPZOW949Pj-pA1bM_dA~~/AAQRxQA~/RgRisbNvP0QdaHR0cHM6Ly90d2l0dGVyLmNvbS9wZXRsb3ZlYnJXA3NwY0IKYMpvLs9gO1bTVlIbZWRvbi5tZW5lemVzQHBldGxvdmUuY29tLmJyWAQAAABj&amp;source=gmail&amp;ust=1624713390507000&amp;usg=AFQjCNFH7nBj6osvP7CJ2A5ZGUvVAEB4wg">
+																		<img src="https://ci4.googleusercontent.com/proxy/NNmbLGU8RKdKs7kIgj2fJqZB5G929o3LZPpdbIfr_OdaJDla3mAp61THEWy688AMww4llP9iGxibIC6f9SWQVUnm3DiP0wFxMS-J3n2tyyDuW5-TJSB2tjnp6aAyg6mJWic=s0-d-e1-ft#https://www.petlove.com.br/static/uploads/banner_image/image/21661/Slice_23.png" border="0" width="42" height="97" alt="Twitter" class="
+																				CToWUd
+																			">
+																	</a>
+																</td>
+															</tr>
+														</table>
+													</td>
+													<td style="width: 25%;">
+	
+													</td>
+												</tr>
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td style="font-family:'Nunito';font-size:16px;line-height: 16px; padding-top:5px;padding-right:0px;padding-left:0px;" align="center">
+											<strong>Atendimento:</strong> (11) 3335-0200 | <a href="mailto:sac@petlove.com.br" style="font-family:'Nunito',sans-serif;font-size:13px;text-decoration:none;color:#000000;margin:0 0 15px" target="_blank">sac@petlove.com.br</a>
+										 </td>
+									</tr>
+									<tr>
+										<td style="font-family:'Nunito';font-size:16px;line-height: 16px; padding-top:5px;padding-right:30px;padding-left:30px;" align="center">
+ 											<p style="margin: 0px; padding: 0px;">A promoção é válida apenas no dia <code>21/06/2021</code> ou enquanto durarem os estoques. A Petlove recomenda que o uso de qualquer <strong>medicamento</strong> sempre seja feito sob a prescrição e acompanhamento de um médico veterinário de confiança. Além disso, é muito importante que você leia atentamente a bula e confira níveis de eficiência, possíveis efeitos colaterais e interações medicamentosas.</p>
+									 		<br>
+											 <p style="margin: 0px; padding: 0px;">Política de frete grátis: <a href="https://clicks.petlove.com.br/f/a/IPAdcaZBfry71XsOEy2A8Q~~/AAQRxQA~/RgRiswU7P0RkaHR0cHM6Ly9hdGVuZGltZW50by5wZXRsb3ZlLmNvbS5ici9oYy9wdC1ici9hcnRpY2xlcy8zNjAwMDcxMDY4MzQtUG9sJUMzJUFEdGljYS1kZS1mcmV0ZS1nciVDMyVBMXRpc1cDc3BjQgpgyjuA0GA41vzAUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~" style="color: rgb(0, 0, 0); text-decoration: none;" target="_blank" data-saferedirecturl="https://www.google.com/url?q=https://clicks.petlove.com.br/f/a/IPAdcaZBfry71XsOEy2A8Q~~/AAQRxQA~/RgRiswU7P0RkaHR0cHM6Ly9hdGVuZGltZW50by5wZXRsb3ZlLmNvbS5ici9oYy9wdC1ici9hcnRpY2xlcy8zNjAwMDcxMDY4MzQtUG9sJUMzJUFEdGljYS1kZS1mcmV0ZS1nciVDMyVBMXRpc1cDc3BjQgpgyjuA0GA41vzAUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~&amp;source=gmail&amp;ust=1624737145440000&amp;usg=AFQjCNGy0H99xkHdXURl5bOUALo0h-34kQ"><u>confira aqui</u></a></p>
+									 		<br>
+											 <p style="margin: 0px; padding: 0px;">A Petlove guarda o direito de alterar os preços e informações apresentadas sem aviso prévio considerando as informações no carrinho de compras como oficiais.</p>
+										</td>
+									</tr>
+									<tr>
+										<td style="font-family:'Nunito';font-size:16px;line-height: 16px; padding-top:5px;padding-right:30px;padding-left:30px;padding-bottom: 15px;" align="center">
+											Esse email foi enviado pela Petlove para <b><a href="mailto:{{products_by_client['email']}}" target="_blank">{{products_by_client['email']}}</a></b>
+											<br>
+											Caso não queira mais receber nossos emails&nbsp;<a href="{{products_by_client['unsubscribe']}}" style="color: rgb(0, 0, 0); text-decoration: none;" target="_blank">
+											<u>clique aqui</u></a>&nbsp;para se descadastrar
+											<br><br>
+											Av. das Nações Unidas, 12.901 - Brooklin Paulista
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
 </html>

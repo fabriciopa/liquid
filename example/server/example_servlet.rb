@@ -2,7 +2,7 @@
 
 module ProductsFilter
   def price(integer)
-    format("$%.2d USD", integer / 100.0)
+    format("R$ %.2f", integer / 100.0)
   end
 
   def prettyprint(text)
@@ -28,12 +28,8 @@ class Servlet < LiquidServlet
     client_id = get_url_params['cliente_id'][0].to_s
     
     { 
-      'products' => products_list, 
-      'more_products' => more_products_list, 
-      'description' => description, 
-      'section' => 'Snowboards', 
-      'cool_products' => true,
-      'products_by_client' => products_by_client[client_id]
+      'products_by_client' => products_by_client[client_id],
+      'news' => news
     }
   end
 
@@ -51,53 +47,81 @@ class Servlet < LiquidServlet
     {
       "araujopa@gmail.com" => {
         'name' => 'Fabrício Araújo',
+        'email' => 'araujopa@gmail.com',
+        'unsubscribe' => 'https://clicks.petlove.com.br/f/a/60VPAspP4x7yix0N193hoQ~~/AAQRxQA~/RgRiswU7P4S8AWh0dHBzOi8vZGFzaGJvYXJkLTA2LmJyYXplLmNvbS9lbmNfdXNlci91bnN1YnNjcmliZT9kPXN6UktOeXJweVczNUFsTm5JNGo1TUElM0QlM0QlMjRCMGxiMnFPM3VESHhURzBSV1Fra3JmcEhWdzhyJTJGUEklMkZWQ1pLcVJFNlZXJTJCNHdzUXNlWU13czFmZ1VPdmolMEFLUlVOV2RPUSUyRjRyTWpDbFAzbU5FT2pQaGI2WVRmQWJmbTF3T2dBNjltWFJ2dXJpRTYycjVubk5kZEtkYyUwQVdGTHRQRHU4Rzc2dnRsdUlnaiUyQjVMQll0MiUyRmlPcFdUUWVyenV6OVo3T3dlWlRBayUyQnFIejRsVFJ5JTJGN3BOJTBBSUNxcTdFZmhMUnhPNXlSTlhNNGxMUHMxeEZjNExvd0N2QjByJTJGYU9pY0JvSWFKaXVNcHRTczYzN2M3N1UlMEFhQnBqWThBamVEbHlCckMyQUF6JTJGOEtha0xvYWdzU0hTOVZ2aExmVkdCRVk4UWkwY0pldXRobFBKSFJxcSUwQXlpaHY4RFpyRHlXMU15ZGdpMkh2JjE9MVcDc3BjQgpgyjuA0GA41vzAUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~',
         'products' => [
           { 
-            'name' => 'Arbor', 
-            'price' => 39900, 
-            'description' => 'the *arbor draft* is a excellent product' 
+            'name' => 'Petisco Pedigree Dentastix Cuidado Oral Para Cães Adultos Raças Pequenas', 
+            'price' => 1349, 
+            'image' => 'https://www.petlove.com.br/images/products/214107/large/Petisco_Pedigree_Dentastix_para_C%C3%A3es_Adultos_Ra%C3%A7as_Pequenas_-_7_Unidades_3104638-2_1.jpg?1570119294',
+            'link' => 'https://www.petlove.com.br/petisco-pedigree-dentastix-para-racas-pequenas-3104638/p?sku=3104638-2'
           },
           { 
-            'name' => 'Arbor Element', 
-            'price' => 40000, 
-            'description' => 'the *arbor element* rocks for freestyling' },
+            'name' => 'Petisco Pedigree Dentastix Cuidado Oral Para Cães Adultos Raças Grandes', 
+            'price' => 2249, 
+            'image' => 'https://www.petlove.com.br/images/products/214128/large/Petisco_Pedigree_Dentastix_para_C%C3%A3es_Adultos_Ra%C3%A7as_Grandes_-_7_Unidades_3104639-3_1.jpg?1570121721',
+            'link' => 'https://www.petlove.com.br/petisco-pedigree-dentastix-para-racas-grandes-7-sticks/p?sku=3104639-3'
+          },
           { 
-            'name' => 'Arbor Diamond', 
-            'price' => 59900, 
-            'description' => 'the *arbor diamond* is a made up product because im obsessed with arbor and have no creativity' 
+            'name' => 'Petisco Pedigree Dentastix Cuidado Oral Para Cães Adultos Raças Médias', 
+            'price' => 1349, 
+            'image' => 'https://www.petlove.com.br/images/products/214121/large/Petisco_Pedigree_Dentastix_para_C%C3%A3es_Adultos_Ra%C3%A7as_M%C3%A9dias_-_7_Unidades_3104639-2_1.jpg?1570120868',
+            'link' => 'https://www.petlove.com.br/petisco-pedigree-dentastix-para-racas-medias-3104639/p?sku=3104639-2'
+          },
+          { 
+            'name' => 'Snacks Oral Fresh Nats para Cães de Raças Médias e Grandes', 
+            'price' => 1934, 
+            'image' => 'https://www.petlove.com.br/images/products/224989/large/Snacks_Oral_Fresh_Nats_para_C%C3%A3es_de_Ra%C3%A7as_M%C3%A9dias_e_Grandes.jpg?1593010651',
+            'link' => 'https://www.petlove.com.br/snacks-oral-fresh-nats-para-caes-de-racas-medias-e-grandes/p?sku=2510198c'
           }
         ]
       },
-      "bruna.moreira@petlove.com.br" => "Harrisburg",
-      "edonmenezes@gmail.com " => "Denver"
+      "edonmenezes@gmail.com" => {
+        'name' => 'Edon Menezes',
+        'email' => 'araujopa@gmail.com',
+        'unsubscribe' => 'https://clicks.petlove.com.br/f/a/60VPAspP4x7yix0N193hoQ~~/AAQRxQA~/RgRiswU7P4S8AWh0dHBzOi8vZGFzaGJvYXJkLTA2LmJyYXplLmNvbS9lbmNfdXNlci91bnN1YnNjcmliZT9kPXN6UktOeXJweVczNUFsTm5JNGo1TUElM0QlM0QlMjRCMGxiMnFPM3VESHhURzBSV1Fra3JmcEhWdzhyJTJGUEklMkZWQ1pLcVJFNlZXJTJCNHdzUXNlWU13czFmZ1VPdmolMEFLUlVOV2RPUSUyRjRyTWpDbFAzbU5FT2pQaGI2WVRmQWJmbTF3T2dBNjltWFJ2dXJpRTYycjVubk5kZEtkYyUwQVdGTHRQRHU4Rzc2dnRsdUlnaiUyQjVMQll0MiUyRmlPcFdUUWVyenV6OVo3T3dlWlRBayUyQnFIejRsVFJ5JTJGN3BOJTBBSUNxcTdFZmhMUnhPNXlSTlhNNGxMUHMxeEZjNExvd0N2QjByJTJGYU9pY0JvSWFKaXVNcHRTczYzN2M3N1UlMEFhQnBqWThBamVEbHlCckMyQUF6JTJGOEtha0xvYWdzU0hTOVZ2aExmVkdCRVk4UWkwY0pldXRobFBKSFJxcSUwQXlpaHY4RFpyRHlXMU15ZGdpMkh2JjE9MVcDc3BjQgpgyjuA0GA41vzAUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~',
+        'products' => [
+          { 
+            'name' => 'Petisco Pedigree Dentastix Cuidado Oral Para Cães Adultos Raças Pequenas', 
+            'price' => 1349, 
+            'image' => 'https://www.petlove.com.br/images/products/214107/large/Petisco_Pedigree_Dentastix_para_C%C3%A3es_Adultos_Ra%C3%A7as_Pequenas_-_7_Unidades_3104638-2_1.jpg?1570119294',
+            'linl' => 'https://www.petlove.com.br/petisco-pedigree-dentastix-para-racas-pequenas-3104638/p?sku=3104638-2'
+          },
+          { 
+            'name' => 'Petisco Pedigree Dentastix Cuidado Oral Para Cães Adultos Raças Grandes', 
+            'price' => 2249, 
+            'image' => 'https://www.petlove.com.br/images/products/214128/large/Petisco_Pedigree_Dentastix_para_C%C3%A3es_Adultos_Ra%C3%A7as_Grandes_-_7_Unidades_3104639-3_1.jpg?1570121721',
+            'link' => 'https://www.petlove.com.br/petisco-pedigree-dentastix-para-racas-grandes-7-sticks/p?sku=3104639-3'
+          },
+          { 
+            'name' => 'Petisco Pedigree Dentastix Cuidado Oral Para Cães Adultos Raças Médias', 
+            'price' => 1349, 
+            'image' => 'https://www.petlove.com.br/images/products/214121/large/Petisco_Pedigree_Dentastix_para_C%C3%A3es_Adultos_Ra%C3%A7as_M%C3%A9dias_-_7_Unidades_3104639-2_1.jpg?1570120868',
+            'link' => 'https://www.petlove.com.br/petisco-pedigree-dentastix-para-racas-medias-3104639/p?sku=3104639-2'
+          },
+          { 
+            'name' => 'Snacks Oral Fresh Nats para Cães de Raças Médias e Grandes', 
+            'price' => 1934, 
+            'image' => 'https://www.petlove.com.br/images/products/224989/large/Snacks_Oral_Fresh_Nats_para_C%C3%A3es_de_Ra%C3%A7as_M%C3%A9dias_e_Grandes.jpg?1593010651',
+            'link' => 'https://www.petlove.com.br/snacks-oral-fresh-nats-para-caes-de-racas-medias-e-grandes/p?sku=2510198c'
+          }
+        ]
+      },
     }
   end
 
-  def products_list
+  def news
     [
       { 
-        'name' => 'Arbor', 
-        'price' => 39900, 
-        'description' => 'the *arbor draft* is a excellent product' 
+        'name' => 'Como saber se o gato está com febre?',
+        'image' => 'https://www.petlove.com.br/dicas/wp-content/uploads/2021/06/febre-gato.jpg',
+        'link' => 'https://www.petlove.com.br/dicas/gato-com-febre'
       },
       { 
-        'name' => 'Arbor Element', 
-        'price' => 40000, 
-        'description' => 'the *arbor element* rocks for freestyling' },
-      { 
-        'name' => 'Arbor Diamond', 
-        'price' => 59900, 
-        'description' => 'the *arbor diamond* is a made up product because im obsessed with arbor and have no creativity' 
+        'name' => 'Como adestrar cachorro filhote da forma correta',
+        'image' => 'https://www.petlove.com.br/dicas/wp-content/uploads/2021/06/poodle-filhote-petlove.jpg',
+        'link' => 'https://www.petlove.com.br/dicas/como-adestrar-cachorro-filhote'
       }
     ]
-  end
-
-  def more_products_list
-    [{ 'name' => 'Arbor Catalyst', 'price' => 39900, 'description' => 'the *arbor catalyst* is an advanced drop-through for freestyle and flatground performance and versatility' },
-     { 'name' => 'Arbor Fish', 'price' => 40000, 'description' => 'the *arbor fish* is a compact pin that features an extended wheelbase and time-honored teardrop shape' }]
-  end
-
-  def description
-    "List of Products ~ This is a list of products with price and description."
   end
 end
