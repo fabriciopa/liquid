@@ -29,7 +29,8 @@ class Servlet < LiquidServlet
     
     { 
       'products_by_client' => products_by_client[client_id],
-      'news' => news
+      'news' => news,
+      'configs'=> configs
     }
   end
 
@@ -41,6 +42,12 @@ class Servlet < LiquidServlet
     id = uri.path.split('/')[4]
     params = CGI::parse(uri.query)
     return params
+  end
+
+  def configs
+    {
+      "link" => "https://clicks.petlove.com.br/f/a/0QQoGcND449EYU_Yt3xUIg~~/AAQRxQA~/RgRisbNvP0SpaHR0cHM6Ly93d3cucGV0bG92ZS5jb20uYnIvY29sZWNhby9jb25oZWNhLWRlbnRhc3RpeD91dG1fc291cmNlPWJ6JnV0bV9tZWRpdW09ZW1haWxfcGwmdXRtX2NhbXBhaWduPTEwMDBfUFJPTU9fRVhDTFVTSVZPX0RPTV8xMjg3Nzk0OTEzXzIwMjEwNjIwJnV0bV9jb250ZW50PVBSMTI4Nzc5NDkxM1cDc3BjQgpgym8uz2A7VtNWUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~"
+    }
   end
 
   def products_list_by_clients
@@ -76,9 +83,9 @@ class Servlet < LiquidServlet
           }
         ]
       },
-      "edonmenezes@gmail.com" => {
-        'name' => 'Edon Menezes',
-        'email' => 'edonmenezes@gmail.com',
+      "bruna.moreira@petlove.com.br" => {
+        'name' => 'Bruna Moreira',
+        'email' => 'bruna.moreira@petlove.com.br',
         'unsubscribe' => 'https://clicks.petlove.com.br/f/a/60VPAspP4x7yix0N193hoQ~~/AAQRxQA~/RgRiswU7P4S8AWh0dHBzOi8vZGFzaGJvYXJkLTA2LmJyYXplLmNvbS9lbmNfdXNlci91bnN1YnNjcmliZT9kPXN6UktOeXJweVczNUFsTm5JNGo1TUElM0QlM0QlMjRCMGxiMnFPM3VESHhURzBSV1Fra3JmcEhWdzhyJTJGUEklMkZWQ1pLcVJFNlZXJTJCNHdzUXNlWU13czFmZ1VPdmolMEFLUlVOV2RPUSUyRjRyTWpDbFAzbU5FT2pQaGI2WVRmQWJmbTF3T2dBNjltWFJ2dXJpRTYycjVubk5kZEtkYyUwQVdGTHRQRHU4Rzc2dnRsdUlnaiUyQjVMQll0MiUyRmlPcFdUUWVyenV6OVo3T3dlWlRBayUyQnFIejRsVFJ5JTJGN3BOJTBBSUNxcTdFZmhMUnhPNXlSTlhNNGxMUHMxeEZjNExvd0N2QjByJTJGYU9pY0JvSWFKaXVNcHRTczYzN2M3N1UlMEFhQnBqWThBamVEbHlCckMyQUF6JTJGOEtha0xvYWdzU0hTOVZ2aExmVkdCRVk4UWkwY0pldXRobFBKSFJxcSUwQXlpaHY4RFpyRHlXMU15ZGdpMkh2JjE9MVcDc3BjQgpgyjuA0GA41vzAUhtlZG9uLm1lbmV6ZXNAcGV0bG92ZS5jb20uYnJYBAAAAGM~',
         'products' => [
           { 
